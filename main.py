@@ -75,7 +75,7 @@ class Environment:
 
 
 if __name__ == "__main__":
-    with open('input.txt','r') as f:
+    with open('./tests/input.txt','r') as f:
             lines = [line.rstrip() for line in f.readlines()]
             # No of _,nodes,streets,cars
             I,S,C = list(map(int,lines[0].split(' ')))
