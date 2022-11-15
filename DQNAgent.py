@@ -10,6 +10,7 @@ class Agent:
         self.gamma = 0.95
         self.brain = Brain(self.state_size, self.action_space)
         self.epsilon = 0.35
+        self.expl_decay_rate = 1.0
         self.step = 0
         self.memory = UER(1000)
         self.update_target_frequency = 1
@@ -60,7 +61,7 @@ class Agent:
 
     def decay_epsilon(self):
         self.step +=1
-        self.epsilon = self.epsilon * np.exp(-self.step)  
+        self.epsilon = np.exp(-self.step * self.expl_decay_rate)  
 
     def observe(self, sample):
         self.memory.store(sample)
