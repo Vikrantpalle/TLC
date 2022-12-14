@@ -14,7 +14,4 @@
 
 `./tests/input.txt`: Input to build the road network.
 
-After cloning the repository run `python setup.py build_ext --inplace` in the command prompt.
-
-Then run `python main.py` to train the agents.
 
